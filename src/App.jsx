@@ -1,12 +1,26 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Education from './pages/Education';
+import Information from './pages/Information';
+import NotFound from './pages/NotFound';
+import Report from './pages/Report';
+import ReportButton from './components/ReportButton';
 
-function App() {
+export default function App() {
   return (
     <>
-       <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <Router>
+        <div>
+          <ReportButton />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/edukasi" element={<Education />} />
+            <Route path="/informasi" element={<Information />} />
+            <Route path="/lapor" element={<Report />} />
+            <Route path="/*" element={<NotFound />} />
+          </Routes>
+        </div>
+      </Router>
     </>
-  )
+  );
 }
-
-export default App
