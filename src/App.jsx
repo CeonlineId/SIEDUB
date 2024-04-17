@@ -17,6 +17,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/edukasi" element={<Education />} />
+            <Route path="/edukasi" element={<Education />} />
             <Route path="/informasi" element={<Information />} />
             <Route path="/lapor" element={<Report />} />
             <Route path="/about" element={<About />} />
