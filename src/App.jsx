@@ -5,6 +5,7 @@ import Information from './pages/Information';
 import NotFound from './pages/NotFound';
 import Report from './pages/Report';
 import ReportButton from './components/ReportButton';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
             <Route path="/lapor" element={<Report />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
+          <Footer />
         </div>
       </Router>
     </>
