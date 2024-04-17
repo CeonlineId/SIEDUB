@@ -2,9 +2,42 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logoW.png';
 import tutor from '../assets/images/tutor.png';
+import '../utils/firebaseConfig';
+import { getFirestore, addDoc, collection } from 'firebase/firestore';
+import { uploadImageToStorage } from '../utils/uploadImageToStorage';
 
 const ReportForm = () => {
-  // State untuk mengatur visibilitas dropdown
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [disasterType, setDisasterType] = useState('');
+  const [location, setLocation] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
+
+  const db = getFirestore();
+  const saveReportData = async () => {
+    const docRef = await addDoc(collection(db, 'report'), {
+      phoneNumber: phoneNumber,
+      fullName: fullName,
+      disasterType: disasterType,
+      location: location,
+      imageUrl: imageUrl,
+    });
+    alert('Laporan berhasil dikirim');
+  };
+
+  const handleFileChange = async event => {
+    const file = event.target.files[0];
+    if (file) {
+      try {
+        const storagePath = `images/${file.name}`;
+        const downloadURL = await uploadImageToStorage(file, storagePath);
+        setImageUrl(downloadURL);
+      } catch (error) {
+        console.error('Error mengunggah file:', error);
+      }
+    }
+  };
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
@@ -94,8 +127,14 @@ const ReportForm = () => {
           d="M0,224L26.7,208C53.3,192,107,160,160,149.3C213.3,139,267,149,320,170.7C373.3,192,427,224,480,245.3C533.3,267,587,277,640,256C693.3,235,747,181,800,144C853.3,107,907,85,960,101.3C1013.3,117,1067,171,1120,181.3C1173.3,192,1227,160,1280,160C1333.3,160,1387,192,1413,208L1440,224L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"
         ></path>
       </svg>
-      <div className="mx-auto p-4 flex justify-center items-center min-h-screen relative">
-        <form className="w-full max-w-full grid grid-cols-1 gap-y-2 bg-white p-10 m-32 mb-10 text-center rounded-lg shadow-lg">
+      <section className="mx-auto p-4 flex justify-center items-center min-h-screen relative">
+        <form
+          className="w-full max-w-full grid grid-cols-1 gap-y-2 bg-white p-10 m-32 mb-10 text-center rounded-lg shadow-lg"
+          onSubmit={e => {
+            e.preventDefault();
+            saveReportData();
+          }}
+        >
           <button
             className="bg-[#FF3D00] text-white p-2 mb-3 rounded-full w-96 block mx-auto"
             disabled
@@ -107,31 +146,31 @@ const ReportForm = () => {
           </a>
           <input
             type="number"
-            id="noHp"
-            name="noHp"
             className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-96"
             placeholder="Nomor Hp"
+            value={phoneNumber}
+            onChange={e => setPhoneNumber(e.target.value)}
           />
           <input
             type="text"
-            id="nama"
-            name="nama"
             className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-96"
             placeholder="Nama Lengkap"
+            value={fullName}
+            onChange={e => setFullName(e.target.value)}
           />
           <input
             type="text"
-            id="jenisBencana"
-            name="jenisBencana"
             className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-96"
             placeholder="Jenis Bencana"
+            value={disasterType}
+            onChange={e => setDisasterType(e.target.value)}
           />
           <input
             type="text"
-            id="lokasi"
-            name="lokasi"
             className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-96"
             placeholder="Lokasi"
+            value={location}
+            onChange={e => setLocation(e.target.value)}
           />
 
           <button className="bg-[#FF3D00] text-white p-2 rounded-xl w-19 h-19 block mx-auto relative">
@@ -140,11 +179,7 @@ const ReportForm = () => {
               capture="environment"
               type="file"
               className="absolute inset-0 opacity-0"
-              onChange={e => {
-                const file = e.target.files[0];
-                // Lakukan sesuatu dengan file yang dipilih
-                console.log('File yang dipilih:', file);
-              }}
+              onChange={handleFileChange}
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -168,11 +203,14 @@ const ReportForm = () => {
           </button>
 
           <p className="text-sm text-slate-400">Kirim Foto Kejadian</p>
-          <button className="w-24 h-10 justify-self-end bg-[#FF3D00] rounded-lg text-white">
+          <button
+            type="submit"
+            className="w-24 h-10 justify-self-end bg-[#FF3D00] rounded-lg text-white"
+          >
             Kirim
           </button>
         </form>
-      </div>
+      </section>
       <div className="container mx-auto flex flex-col items-center pb-10">
         <img src={tutor} alt="Tutorial" className="w-96 h-28" />
       </div>
