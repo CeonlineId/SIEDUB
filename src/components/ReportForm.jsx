@@ -1,71 +1,96 @@
-import React, { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import logo from '../assets/images/logoW.png';
+import tutor from '../assets/images/tutor.png';
 
-// Lokasi default bisa diganti dengan lokasi apapun, akan digunakan jika Geolocation tidak tersedia atau tidak diizinkan
-const defaultLocation = [-6.562322118503798, 107.75989415338564];
+const Navbar = () => {
+    // State untuk mengatur visibilitas dropdown
+    const [dropdownOpen, setDropdownOpen] = useState(false);
 
-function LocationMarker() {
-  const [position, setPosition] = useState(null);
-  const map = useMapEvents({
-    click(e) {
-      setPosition(e.latlng);
-      map.flyTo(e.latlng, map.getZoom());
-    },
-  });
+    return (
+        <>
+            <nav className="bg-[#FF3D00] text-white p-4 px-20 fixed top-0 left-0 w-full z-10">
+                <div className="container mx-auto flex justify-between items-center">
+                    <div className="flex items-center gap-8 text-lg font-semibold">
+                        <img src={logo} alt="Logo" className="w-25 h-14"/>
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) =>
+                                isActive ? "text-white border-b-2 border-white" : "text-white hover:border-b-2 hover:border-white"
+                            }
+                        >
+                            Beranda
+                        </NavLink>
+                        <div 
+                            className="relative"
+                        >
+                            <a href="#" className="text-white" onClick={() => setDropdownOpen(!dropdownOpen)}>
+                                Edukasi
+                            </a>
+                            {dropdownOpen && (
+                                <div className="absolute top-full left-0 bg-gray-800 shadow-md rounded-md mt-1 py-2 w-48 font-normal text-sm">
+                                    <NavLink to="#" className="block px-4 py-2 text-white hover:bg-gray-700">Banjir</NavLink>
+                                    <NavLink to="#" className="block px-4 py-2 text-white hover:bg-gray-700">Kebakaran Hutan</NavLink>
+                                    <NavLink to="#" className="block px-4 py-2 text-white hover:bg-gray-700">Longsor</NavLink>
+                                    <NavLink to="#" className="block px-4 py-2 text-white hover:bg-gray-700">Tsunami</NavLink>
+                                    <NavLink to="#" className="block px-4 py-2 text-white hover:bg-gray-700">Erupsi</NavLink>
+                                    <NavLink to="#" className="block px-4 py-2 text-white hover:bg-gray-700">Gempa</NavLink>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                    <div className="flex gap-4 px-14">
+                        <NavLink
+                            to="/informasi"
+                            className="border border-white border-3 hover:bg-white focus:bg-white text-white hover:text-[#FF3D00] focus:text-[#FF3D00] font-semibold py-1 px-5 rounded"
+                        >
+                            Informasi
+                        </NavLink>
+                    </div>
+                </div>
+            </nav>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="pt-20 absolute top-0 left-0 z-0">
+                <path fill="#FF3D00" fillOpacity="1" d="M0,224L26.7,208C53.3,192,107,160,160,149.3C213.3,139,267,149,320,170.7C373.3,192,427,224,480,245.3C533.3,267,587,277,640,256C693.3,235,747,181,800,144C853.3,107,907,85,960,101.3C1013.3,117,1067,171,1120,181.3C1173.3,192,1227,160,1280,160C1333.3,160,1387,192,1413,208L1440,224L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path>
+            </svg>
+            <div className="mx-auto p-4 flex justify-center items-center min-h-screen relative">
+    <form className="w-full max-w-full grid grid-cols-1 gap-y-2 bg-white p-10 m-32 mb-10 text-center rounded-lg shadow-lg">
+        <button className="bg-[#FF3D00] text-white p-2 mb-3 rounded-full w-96 block mx-auto" disabled>Laporkan Bencana</button>
+        <a href="#" className="text-gray-400 pb-3">Cara melapor dengan baik?</a>
+        <input type="number" id="noHp" name="noHp" className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-96" placeholder="Nomor Hp"/>
+        <input type="text" id="nama" name="nama" className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-96" placeholder="Nama Lengkap"/>
+        <input type="text" id="jenisBencana" name="jenisBencana" className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-96" placeholder="Jenis Bencana"/>
+        <input type="text" id="lokasi" name="lokasi" className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-96" placeholder="Lokasi"/>
 
-  return position === null ? null : <Marker position={position}></Marker>;
-}
+        <button className="bg-[#FF3D00] text-white p-2 rounded-xl w-19 h-19 block mx-auto relative">
+            <input 
+                accept="image/*" 
+                capture="environment" 
+                type="file" 
+                className="absolute inset-0 opacity-0"
+                onChange={(e) => {
+                    const file = e.target.files[0];
+                    // Lakukan sesuatu dengan file yang dipilih
+                    console.log("File yang dipilih:", file);
+                }}
+            />
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" className="w-12 h-12">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" />
+            </svg>
+        </button>
 
-export default function ReportForm() {
-  const [currentLocation, setCurrentLocation] = useState(defaultLocation);
+      <p className="text-sm text-slate-400">Kirim Foto Kejadian</p>
+      <button className="w-24 h-10 justify-self-end bg-[#FF3D00] rounded-lg text-white">Kirim</button>
+    </form>
 
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      position => {
-        setCurrentLocation([
-          position.coords.latitude,
-          position.coords.longitude,
-        ]);
-      },
-      () => {
-        console.log('Unable to retrieve your location');
-      },
+
+</div>
+<div className="container mx-auto flex flex-col items-center pb-10">
+  <img src={tutor} alt="Tutorial" className="w-96 h-28"/>
+</div>
+
+     </>
     );
-  }, []);
+};
 
-  return (
-    <div>
-      <h1>ReportForm</h1>
-      <form>
-        <label>
-          Nama:
-          <input type="text" name="name" />
-        </label>
-        <br />
-        <label>
-          Nomor HP:
-          <input type="text" name="phone" />
-        </label>
-        <br />
-        <label>
-          Bukti Gambar:
-          <input type="file" accept="image/*" capture="environment" />
-        </label>
-      </form>
-      <div style={{ height: '400px', marginTop: '20px' }}>
-        <MapContainer
-          center={currentLocation}
-          zoom={13}
-          style={{ height: '100%', width: '100%' }}
-        >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          />
-          <LocationMarker />
-        </MapContainer>
-      </div>
-    </div>
-  );
-}
+export default Navbar;

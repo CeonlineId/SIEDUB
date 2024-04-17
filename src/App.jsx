@@ -18,6 +18,7 @@ export default function App() {
             <Route path="/edukasi" element={<Education />} />
             <Route path="/informasi" element={<Information />} />
             <Route path="/lapor" element={<Report />} />
+            <Route path="/about" element={<About />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
           <Footer />
