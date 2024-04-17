@@ -1,0 +1,15 @@
+.slide-in {
+    animation: slideInAnimation 1s ease forwards; /* Apply slide-in animation */
+  }
+  
+  @keyframes slideInAnimation {
+    from {
+      transform: translateX(100%); /* Start position: di luar tampilan di sebelah kiri */
+      opacity: 0; /* Mulai dengan opasitas 0 */
+    }
+    to {
+      transform: translateX(0); /* End position: di tengah tampilan */
+      opacity: 1; /* Berakhir dengan opasitas 1 */
+    }
+  }
+  
