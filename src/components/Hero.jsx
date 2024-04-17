@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from './Navbar';
 import Img from '../assets/images/org.png';
 
 export default function Hero() {
