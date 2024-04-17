@@ -1,7 +1,9 @@
 import React from 'react';
 import Img from '../assets/images/org.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function Hero() {
+  let navigate = useNavigate();
   return (
     <div>
       <div className="grid grid-cols-2">
@@ -17,7 +19,8 @@ export default function Hero() {
           </p>
           <div className="grid grid-cols-2 px-10">
             <div className="col-span-1 flex flex-col justify-center">
-              <button className="bg-[#FF3D00] border-2 hover:bg-orange-700 focus:bg-orange-700 text-white hover:text-white focus:text-white font-semibold py-2 px-20 rounded mx-auto text-start">
+              <button  onClick={() => navigate('/edukasi')} className="bg-[#FF3D00] border-2 hover:bg-orange-700 focus:bg-orange-700 text-white hover:text-white focus:text-white font-semibold py-2 px-20 rounded mx-auto text-start">
+                
                 Mulai
               </button>
             </div>

@@ -27,7 +27,7 @@ const Navbar = () => {
                         </a>
                         {dropdownOpen && (
                             <div className="absolute top-full left-0 bg-gray-800 shadow-md rounded-md mt-1 py-2 w-48 font-normal text-sm">
-                                <NavLink to="#" className="block px-4 py-2 text-white hover:bg-gray-700">Banjir</NavLink>
+                                <NavLink to="/edukasi" className="block px-4 py-2 text-white hover:bg-gray-700">Banjir</NavLink>
                                 <NavLink to="#" className="block px-4 py-2 text-white hover:bg-gray-700">Kebakaran Hutan</NavLink>
                                 <NavLink to="#" className="block px-4 py-2 text-white hover:bg-gray-700">Longsor</NavLink>
                                 <NavLink to="#" className="block px-4 py-2 text-white hover:bg-gray-700">Tsunami</NavLink>
