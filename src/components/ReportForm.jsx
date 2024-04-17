@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logoW.png';
+import tutor from '../assets/images/tutor.png';
 
 const Navbar = () => {
     // State untuk mengatur visibilitas dropdown
@@ -52,7 +53,7 @@ const Navbar = () => {
                 <path fill="#FF3D00" fillOpacity="1" d="M0,224L26.7,208C53.3,192,107,160,160,149.3C213.3,139,267,149,320,170.7C373.3,192,427,224,480,245.3C533.3,267,587,277,640,256C693.3,235,747,181,800,144C853.3,107,907,85,960,101.3C1013.3,117,1067,171,1120,181.3C1173.3,192,1227,160,1280,160C1333.3,160,1387,192,1413,208L1440,224L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path>
             </svg>
             <div className="mx-auto p-4 flex justify-center items-center min-h-screen relative">
-    <form className="w-full max-w-full grid grid-cols-1 gap-y-2 bg-white p-10 m-32 text-center rounded-lg shadow-lg">
+    <form className="w-full max-w-full grid grid-cols-1 gap-y-2 bg-white p-10 m-32 mb-10 text-center rounded-lg shadow-lg">
         <button className="bg-[#FF3D00] text-white p-2 mb-3 rounded-full w-96 block mx-auto" disabled>Laporkan Bencana</button>
         <a href="#" className="text-gray-400 pb-3">Cara melapor dengan baik?</a>
         <input type="number" id="noHp" name="noHp" className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-96" placeholder="Nomor Hp"/>
@@ -78,12 +79,17 @@ const Navbar = () => {
             </svg>
         </button>
 
-<p className="text-sm text-slate-400">Kirim Foto Kejadian</p>
-<button className="w-24 h-10 justify-self-end bg-[#FF3D00] rounded-lg text-white">Kirim</button>
+      <p className="text-sm text-slate-400">Kirim Foto Kejadian</p>
+      <button className="w-24 h-10 justify-self-end bg-[#FF3D00] rounded-lg text-white">Kirim</button>
     </form>
+
+
+</div>
+<div className="container mx-auto flex flex-col items-center pb-10">
+  <img src={tutor} alt="Tutorial" className="w-96 h-28"/>
 </div>
 
-        </>
+     </>
     );
 };
 
