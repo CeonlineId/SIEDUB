@@ -5,7 +5,6 @@ import Img from '../assets/images/org.png';
 export default function Hero() {
   return (
     <div>
-      <Navbar />
       <div className="grid grid-cols-2">
         <div className="col-span-1 flex flex-col justify-center">
           <h1 className="text-start font-bold text-4xl px-20 py-8">
