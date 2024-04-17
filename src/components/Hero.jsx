@@ -17,7 +17,7 @@ export default function Hero() {
               </button>
             </div>
             <div className="col-span-1 flex flex-col justify-center">
-              <a href="">Pelajari Lebih Lanjut</a>
+              <a href="/about">Pelajari Lebih Lanjut</a>
             </div>
           </div>
         </div>
