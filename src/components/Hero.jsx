@@ -23,8 +23,8 @@ export default function Hero() {
                 Mulai
               </button>
             </div>
-            <div className="flex justify-center md:justify-start">
-              <a href="/about" className="text-[#FF3D00] font-semibold hover:underline">
+            <div className="flex items-center justify-center md:justify-start">
+              <a href="/about" className="text-black font-semibold hover:underline">
                 Pelajari Lebih Lanjut
               </a>
             </div>

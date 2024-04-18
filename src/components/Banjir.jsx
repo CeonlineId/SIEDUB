@@ -10,7 +10,9 @@ const EduSection = () => {
     <>
     <Navbar />
     <div className="container mx-auto px-4 py-8 m-20">
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 pb-20">
+        <h1 className="text-4xl font-semibold text-center tracking-wider">Edukasi Bencana <br />(Banjir)</h1>
+            <p className="text-sm text-center mt-4 tracking-wider">Ini merupakan edukasi tentang <br /> bagaimana jika terjadi bencana <br /> alam (Banjir) di daerah kalian</p>
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 pb-20 pt-10">
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl ">
                 <div className="bg-[#FF3D00] text-white w-20 h-10 flex items-center rounded-lg justify-center mr-4">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
