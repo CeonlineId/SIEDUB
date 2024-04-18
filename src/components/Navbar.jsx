@@ -32,7 +32,7 @@ const Navbar = () => {
             {dropdownOpen && (
               <div className="absolute top-full left-0 bg-gray-800 shadow-md rounded-md mt-1 py-2 w-48 font-normal text-sm">
                 <NavLink
-                  to="#"
+                  to="/edukasi/banjir"
                   className="block px-4 py-2 text-white hover:bg-gray-700"
                 >
                   Banjir

@@ -5,7 +5,7 @@ const EduSection = () => {
     <div className="container mx-auto px-4 py-8 m-20">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
         {/* Kartu 1 */}
-        <a href=""><div className="relative bg-white rounded-lg shadow-lg p-6 flex items-center transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl ">
+        <a href="/edukasi/banjir"><div className="relative bg-white rounded-lg shadow-lg p-6 flex items-center transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl ">
           <div className="bg-[#FF3D00] text-white rounded-full w-8 h-24 flex items-center justify-center mr-4">
             1
           </div>
