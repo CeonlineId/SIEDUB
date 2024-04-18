@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 export default function ReportButton() {
   let navigate = useNavigate();
   return (
-    <div className="fixed bottom-8 right-16 z-50">
+    <div className="fixed bottom-8 right-10 z-50">
       <button
         onClick={() => navigate('/lapor')}
         className="bg-[#FF3D00] text-white font-bold py-4 px-4 rounded-xl"
