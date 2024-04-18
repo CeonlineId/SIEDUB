@@ -22,13 +22,12 @@ const Navbar = () => {
             Beranda
           </NavLink>
           <div className="relative">
-            <a
-              href="#"
-              className="text-black"
+            <p
+              className="text-black hover:cursor-pointer"
               onClick={() => setDropdownOpen(!dropdownOpen)}
             >
               Edukasi
-            </a>
+            </p>
             {dropdownOpen && (
               <div className="absolute top-full left-0 bg-gray-800 shadow-md rounded-md mt-1 py-2 w-48 font-normal text-sm">
                 <NavLink
