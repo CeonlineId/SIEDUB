@@ -10,80 +10,80 @@ const EduSection = () => {
     <>
     <Navbar />
     <div className="container mx-auto px-4 py-8 m-20">
-        <h1 className="text-4xl font-semibold text-center tracking-wider">Edukasi Bencana <br />(Banjir)</h1>
-            <p className="text-sm text-center mt-4 tracking-wider">Ini merupakan edukasi tentang <br /> bagaimana jika terjadi bencana <br /> alam (Banjir) di daerah kalian</p>
+        <h1 className="text-4xl font-semibold text-center tracking-wider">Edukasi Bencana <br />(Kebakaran Hutan)</h1>
+            <p className="text-sm text-center mt-4 tracking-wider">Ini merupakan edukasi tentang <br /> bagaimana jika terjadi bencana <br /> alam (Kebakaran Hutan) di daerah kalian</p>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 pb-20 pt-10">
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl ">
-                <div className="bg-[#FF3D00] text-white w-20 h-10 flex items-center rounded-lg justify-center mr-4">
+                <div className="bg-[#FF3D00] text-white w-20 h-10 flex items-center rounded-lg justify-center mr-4 p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
                     </svg>
                 </div>
                 <div className="p-2">
                     <h2 className="font-semibold p-1">Pengertian dan Penyebab </h2><hr className="border-gray-400" />
-                    <h2 className="text-xl font-semibold mb-1 mt-3 pl-10">Banjir</h2>
-                    <p className="text-gray-600 pl-10 pb-5">Banjir adalah peristiwa alam di mana air meluap dan mencakup area yang biasanya kering. Penyebabnya bisa termasuk hujan deras, sungai yang meluap, topografi datar, pencairan salju, letusan gunung berapi, perubahan tanah oleh manusia, serta infrastruktur yang buruk. Perubahan iklim juga semakin mempengaruhi kejadian banjir.</p>
+                    <h2 className="text-xl font-semibold mb-1 mt-3 pl-10">Kebakaran Hutan</h2>
+                    <p className="text-gray-600 pl-10 pb-5">Kebakaran hutan adalah penyebaran api yang tidak terkendali di area hutan. Penyebabnya meliputi aktivitas manusia seperti pembakaran lahan, cuaca ekstrem seperti panas dan petir, serta vegetasi yang mudah terbakar. Dampaknya mencakup kerusakan habitat, penurunan kualitas udara, dan kerugian ekonomi. Pencegahan dan tanggapan cepat sangat penting untuk melindungi hutan dan kehidupan manusia.</p>
                 </div>
             </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-8 w">
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-32 h-10 flex items-center justify-center mr-4">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-16 h-10 flex items-center justify-center mr-4 p-2">
                     1
                 </div>
                 <div className="p-2">
-                    <h2 className="font-semibold">Tingkatkan Kewaspadaan</h2>
+                    <h2 className="font-semibold">Tetap Tenang</h2>
                     <img src={b1} alt="Logo" className="w-96 h-auto ml-10 mb-3" />
                         <div className="flex gap-5 items-center">
                             <h1 className="font-semibold text-2xl">1</h1>
                             <h2 className="text-md font-semibold">Langkah Pertama</h2>
                         </div>
-                    <p className="text-gray-600 pb-5 pl-8">Pertama-tama, penting untuk selalu waspada terhadap kondisi cuaca dan peringatan banjir dari otoritas setempat. Perhatikan tanda-tanda awal banjir seperti peningkatan tinggi air sungai atau genangan air di sekitar area Anda.</p>
+                    <p className="text-gray-600 pb-5 pl-8">Pertahankan ketenangan dan jangan panik. Memiliki pikiran yang tenang akan membantu Anda membuat keputusan yang tepat.</p>
                 </div>
             </div>
 
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-32 h-10 flex items-center justify-center mr-4">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-14 h-10 flex items-center justify-center mr-4 p-2">
                     2
                 </div>
                 <div className="p-2">
-                    <h2 className="font-semibold">Segera Pindah Ke Tempat Yang Lebih Tinggi</h2>
+                    <h2 className="font-semibold">Evaluasi Situasi</h2>
                     <img src={b2} alt="Logo" className="w-96 h-auto ml-10 mb-3" />
                         <div className="flex gap-5 items-center">
                             <h1 className="font-semibold text-2xl">2</h1>
                             <h2 className="text-md font-semibold">Langkah Kedua</h2>
                         </div>
-                    <p className="text-gray-600 pb-5 pl-9">Jika Anda mendapatkan peringatan atau melihat tanda-tanda banjir, segera pindah ke tempat yang lebih tinggi. Pindahlah ke lantai atas rumah atau bangunan, atau ke tempat yang lebih tinggi di daerah sekitar Anda.</p>
+                    <p className="text-gray-600 pb-5 pl-9">Evaluasi arah dan kecepatan penyebaran api. Cari jalur evakuasi yang aman dan jauhi area yang terbakar.</p>
                 </div>
             </div>
 
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-24 h-10 flex items-center justify-center mr-4">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-20 h-10 flex items-center justify-center mr-4 p-2">
                     3
                 </div>
                 <div className="p-2">
-                    <h2 className="font-semibold">Cari Jalur Evakuasi yang Aman</h2>
+                    <h2 className="font-semibold">Jangan Panik</h2>
                     <img src={b3} alt="Logo" className="w-96 h-auto ml-10 mb-3" />
                         <div className="flex gap-5 items-center">
                             <h1 className="font-semibold text-2xl">3</h1>
                             <h2 className="text-md font-semibold">Langkah Ketiga</h2>
                         </div>
-                    <p className="text-gray-600 pb-5 pl-8">Jika Anda terjebak di area yang terendam banjir, carilah jalur evakuasi yang aman. Hindari berjalan melawan arus air dan cari rute yang lebih tinggi dan stabil.</p>
+                    <p className="text-gray-600 pb-5 pl-8">Jika Anda terjebak di dalam hutan, cari tempat yang paling aman untuk berlindung, seperti lahan yang sudah terbakar sebelumnya, tanah yang basah, atau sungai kecil.</p>
                 </div>
             </div>
 
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-36 h-10 flex items-center justify-center mr-4">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-20 h-10 flex items-center justify-center mr-4 p-2">
                     4
                 </div>
                 <div className="p-2">
-                    <h2 className="font-semibold">Hubungi Layanan Darurat</h2>
+                    <h2 className="font-semibold">Cari Perlindungan</h2>
                     <img src={b4} alt="Logo" className="w-96 h-auto ml-10 mb-3" />
                         <div className="flex gap-5 items-center">
                             <h1 className="font-semibold text-2xl">4</h1>
                             <h2 className="text-md font-semibold">Langkah Keempat</h2>
                         </div>
-                    <p className="text-gray-600 pb-5 pl-8">Jika Anda memerlukan bantuan atau merasa dalam bahaya, segera hubungi layanan darurat setempat seperti polisi, pemadam kebakaran, atau tim penyelamat. Berikan informasi yang jelas tentang lokasi Anda dan situasi yang sedang terjadi.</p>
+                    <p className="text-gray-600 pb-5 pl-8">Cari tempat yang rendah seperti lembah atau area yang terbuka. Hindari berada di lereng yang curam atau di atas bukit karena api cenderung naik ke atas.</p>
                 </div>
             </div>  
         </div>

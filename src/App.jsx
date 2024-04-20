@@ -8,6 +8,7 @@ import ReportButton from './components/ReportButton';
 import Footer from './components/Footer';
 import About from './components/About';
 import Banjir from './components/Banjir';
+import KebakaranHutan from './components/KebakaranHutan';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/edukasi" element={<Education />} />
             <Route path="/edukasi/banjir" element={<Banjir />} />
+            <Route path="/edukasi/kebakaran-hutan" element={<KebakaranHutan />} />
             <Route path="/informasi" element={<Information />} />
             <Route path="/lapor" element={<Report />} />
             <Route path="/about" element={<About />} />

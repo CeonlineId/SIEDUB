@@ -17,11 +17,11 @@ export default function Footer() {
           <p>Di dukung oleh</p>
           <img src={Dukungan} alt="dkg" className="w-64 h-13 pt-4" />
           <div className="flex gap-4 font-semibold text-sm opacity-70 pt-4 pb-4">
-            <a href="#">BERANDA</a>
-            <a href="#">EDUKASI</a>
-            <a href="#">INFORMASI</a>
-            <a href="#">LAPOR</a>
-            <a href="#">TENTANG KAMI</a>
+            <a href="/">BERANDA</a>
+            <a href="/edukasi">EDUKASI</a>
+            <a href="/informasi">INFORMASI</a>
+            <a href="/lapor">LAPOR</a>
+            <a href="/about">TENTANG KAMI</a>
           </div>
           <p className="opacity-50 text-sm">
             Copyright 2024.
@@ -36,13 +36,13 @@ export default function Footer() {
           <p>Lebih dekat dengan kami</p>
           <div className="flex gap-7 pt-4">
             <a href="#">
-              <img src={Ig} alt="psh" className="w-30 h-10 " />
+              <img src={Ig} alt="Instagram" className="w-30 h-10 " />
             </a>
             <a href="">
-              <img src={Git} alt="psh" className="w-30 h-10 " />
+              <img src={Git} alt="GitHub" className="w-30 h-10 " />
             </a>
             <a href="">
-              <img src={Mail} alt="psh" className="w-30 h-10 " />
+              <img src={Mail} alt="Email" className="w-30 h-10 " />
             </a>
           </div>
         </div>
