@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import logoW from '../assets/images/logoW.png';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  // State untuk mengatur visibilitas dropdown dan sidebar
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [informasiBelow, setInformasiBelow] = useState(false);
@@ -22,7 +22,9 @@ const Navbar = () => {
     <nav className="bg-white text-black p-4 px-4 md:px-20 fixed top-0 left-0 w-full z-10">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center gap-4 text-lg font-semibold">
-          <img src={logo} alt="Logo" className="w-32 h-10" />
+          <Link to="/" className="w-32 h-10">
+            <img src={logo} alt="Logo" className="w-full h-full" />
+          </Link>
           <div className="hidden md:flex items-center gap-8">
             <NavLink
               to="/"
@@ -60,7 +62,7 @@ const Navbar = () => {
                     Banjir
                   </NavLink>
                   <NavLink
-                    to="#"
+                    to="/edukasi/kebakaran-hutan"
                     className="block px-4 py-2 text-white hover:bg-gray-700"
                   >
                     Kebakaran Hutan

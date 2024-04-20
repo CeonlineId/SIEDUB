@@ -1,12 +1,16 @@
 import { useNavigate } from 'react-router-dom';
+import { useMediaQuery } from '@react-hook/media-query';
 
 export default function ReportButton() {
   let navigate = useNavigate();
+  const isLargeScreen = useMediaQuery('(min-width: 1024px)');
+
   return (
     <div className="fixed bottom-8 right-10 z-50">
       <button
         onClick={() => navigate('/lapor')}
-        className="bg-[#FF3D00] text-white font-bold py-4 px-4 rounded-xl"
+        className={`bg-[#FF3D00] text-white font-bold py-4 px-4 rounded-xl ${isLargeScreen ? 'pointer-events-none' : ''}`}
+        disabled={isLargeScreen}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +21,6 @@ export default function ReportButton() {
           className="w-6 h-6"
         >
           {' '}
-          {/* Mengubah ukuran ikon */}
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
