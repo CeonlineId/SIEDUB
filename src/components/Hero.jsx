@@ -19,12 +19,12 @@ export default function Hero() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-10 md:px-10  ">
             <div className="flex justify-center md:justify-start ">
-              <button onClick={() => navigate('/edukasi')} className="bg-[#FF3D00] border-2 hover:bg-orange-700 focus:bg-orange-700 text-white hover:text-white focus:text-white font-semibold py-2 px-40 md:px-24 rounded">
+              <button onClick={() => navigate('/edukasi')} className="bg-[#FF3D00] border-2 hover:bg-orange-700 focus:bg-orange-700 text-white hover:text-white focus:text-white font-semibold py-2 px-28 rounded">
                 Mulai
               </button>
             </div>
-            <div className="flex items-center justify-center md:justify-start">
-              <a href="/about" className="text-black font-semibold hover:underline">
+            <div className="flex justify-center md:justify-start">
+              <a href="/about" className="text-[#FF3D00] font-semibold hover:underline">
                 Pelajari Lebih Lanjut
               </a>
             </div>
