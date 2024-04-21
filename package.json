@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@firebase/firestore": "^4.6.0",
+    "@mui/material": "^5.15.15",
     "@react-hook/media-query": "^1.1.1",
     "dotenv": "^16.4.5",
     "firebase": "^10.11.0",
