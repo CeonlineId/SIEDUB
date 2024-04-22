@@ -9,6 +9,10 @@ import Footer from './components/Footer';
 import About from './components/About';
 import Banjir from './components/Banjir';
 import KebakaranHutan from './components/KebakaranHutan';
+import Longsor from './components/Longsor';
+import Tsunami from './components/Tsunami';
+import Erupsi from './components/Erupsi';
+import Gempa from './components/Gempa';
 
 export default function App() {
   return (
@@ -21,6 +25,10 @@ export default function App() {
             <Route path="/edukasi" element={<Education />} />
             <Route path="/edukasi/banjir" element={<Banjir />} />
             <Route path="/edukasi/kebakaran-hutan" element={<KebakaranHutan />} />
+            <Route path="/edukasi/longsor" element={<Longsor />} />
+            <Route path="/edukasi/tsunami" element={<Tsunami />} />
+            <Route path="/edukasi/erupsi-gunung-berapi" element={<Erupsi />} />
+            <Route path="/edukasi/gempa-bumi" element={<Gempa />} />
             <Route path="/informasi" element={<Information />} />
             <Route path="/lapor" element={<Report />} />
             <Route path="/about" element={<About />} />

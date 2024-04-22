@@ -16,7 +16,7 @@ const EduSection = () => {
         </div></a>
         
         {/* Kartu 2 */}
-        <a href=""><div className="relative bg-white rounded-lg shadow-lg p-6 flex items-center transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
+        <a href="/edukasi/kebakaran-hutan"><div className="relative bg-white rounded-lg shadow-lg p-6 flex items-center transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
           <div className="bg-[#FF3D00] text-white rounded-full w-8 h-24 flex items-center justify-center mr-4">
             2
           </div>
@@ -27,7 +27,7 @@ const EduSection = () => {
         </div></a>
         
         {/* Kartu 3 */}
-        <a href=""> <div className="relative bg-white rounded-lg shadow-lg p-6 flex items-center transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
+        <a href="/edukasi/longsor"> <div className="relative bg-white rounded-lg shadow-lg p-6 flex items-center transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
           <div className="bg-[#FF3D00] text-white rounded-full w-8 h-24 flex items-center justify-center mr-4">
             3
           </div>
@@ -38,7 +38,7 @@ const EduSection = () => {
         </div></a>
        
         {/* Kartu 4 */}
-        <a href=""><div className="relative bg-white rounded-lg shadow-lg p-6 flex items-center transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
+        <a href="/edukasi/tsunami"><div className="relative bg-white rounded-lg shadow-lg p-6 flex items-center transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
           <div className="bg-[#FF3D00] text-white rounded-full w-8 h-24 flex items-center justify-center mr-4">
             4
           </div>
@@ -49,7 +49,7 @@ const EduSection = () => {
         </div></a>
         
         {/* Kartu 5 */}
-        <a href=""><div className="relative bg-white rounded-lg shadow-lg p-6 flex items-center transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
+        <a href="/edukasi/erupsi-gunung-berapi"><div className="relative bg-white rounded-lg shadow-lg p-6 flex items-center transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
           <div className="bg-[#FF3D00] text-white rounded-full w-8 h-24 flex items-center justify-center mr-4">
             5
           </div>
@@ -60,7 +60,7 @@ const EduSection = () => {
         </div></a>
         
         {/* Kartu 6 */}
-        <a href=""><div className="relative bg-white rounded-lg shadow-lg p-6 flex items-center transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
+        <a href="/edukasi/gempa-bumi"><div className="relative bg-white rounded-lg shadow-lg p-6 flex items-center transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
           <div className="bg-[#FF3D00] text-white rounded-full w-8 h-24 flex items-center justify-center mr-4">
             6
           </div>

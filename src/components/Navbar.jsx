@@ -68,25 +68,25 @@ const Navbar = () => {
                     Kebakaran Hutan
                   </NavLink>
                   <NavLink
-                    to="#"
+                    to="/edukasi/longsor"
                     className="block px-4 py-2 text-white hover:bg-gray-700"
                   >
                     Longsor
                   </NavLink>
                   <NavLink
-                    to="#"
+                    to="/edukasi/tsunami"
                     className="block px-4 py-2 text-white hover:bg-gray-700"
                   >
                     Tsunami
                   </NavLink>
                   <NavLink
-                    to="#"
+                    to="/edukasi/erupsi-gunung-berapi"
                     className="block px-4 py-2 text-white hover:bg-gray-700"
                   >
                     Erupsi
                   </NavLink>
                   <NavLink
-                    to="#"
+                    to="/edukasi/gempa-bumi"
                     className="block px-4 py-2 text-white hover:bg-gray-700"
                   >
                     Gempa
@@ -168,31 +168,31 @@ const Navbar = () => {
                       Banjir
                     </NavLink>
                     <NavLink
-                      to="#"
+                      to="/edukasi/kebakaran-hutan"
                       className="block px-4 py-2 text-white hover:bg-gray-700"
                     >
                       Kebakaran Hutan
                     </NavLink>
                     <NavLink
-                      to="#"
+                      to="/edukasi/longsor"
                       className="block px-4 py-2 text-white hover:bg-gray-700"
                     >
                       Longsor
                     </NavLink>
                     <NavLink
-                      to="#"
+                      to="/edukasi/tsunami"
                       className="block px-4 py-2 text-white hover:bg-gray-700"
                     >
                       Tsunami
                     </NavLink>
                     <NavLink
-                      to="#"
+                      to="/edukasi/erupsi-gunung-berapi"
                       className="block px-4 py-2 text-white hover:bg-gray-700"
                     >
                       Erupsi
                     </NavLink>
                     <NavLink
-                      to="#"
+                      to="/edukasi/gempa-bumi"
                       className="block px-4 py-2 text-white hover:bg-gray-700"
                     >
                       Gempa
