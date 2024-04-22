@@ -28,6 +28,8 @@ const ReportForm = () => {
         disasterType: disasterType,
         location: location,
         imageUrl: imageUrl,
+        isTrue: 0,
+        isFalse: 0,
       });
       alert('Laporan berhasil dikirim!');
       navigate('/');
