@@ -16,14 +16,14 @@ export default function Footer() {
         <div className="flex flex-col items-center ">
           <p>Di dukung oleh</p>
           <img src={Dukungan} alt="dkg" className="w-64 h-13 pt-4 item-center" />
-          <div className="flex gap-4 font-semibold text-sm opacity-70 pt-4 pb-4 ">
+          <div className="flex gap-2 md:gap-1 font-semibold text-sm justify-center opacity-70 pt-4 pb-4 ">
             <a href="/" className='text-center'>BERANDA</a>
             <a href="/edukasi" className='text-center'>EDUKASI</a>
             <a href="/informasi" className='text-center'>INFORMASI</a>
             <a href="/lapor" className='text-center'>LAPOR</a>
             <a href="/about" className='text-center'>TENTANG KAMI</a>
           </div>
-          <p className="opacity-50 text-sm">
+          <p className="opacity-50 text-sm text-center">
             Copyright 2024.
             <a href="#" className="text-blue-600">
               {' '}
