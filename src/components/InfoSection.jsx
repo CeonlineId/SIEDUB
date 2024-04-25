@@ -69,7 +69,7 @@ export default function InfoSection() {
         disekitar
         <br /> lingkungan masyarakat
       </p>
-      <table className="border-collapse border border-gray-600 rounded-lg mt-4 mx-auto ">
+      <table className="border-collapse border border-gray-300 rounded-lg mt-4 mx-auto ">
         <thead>
           <tr>
             <th className="border border-gray-400 bg-gray-300 px-4 py-2 font-normal">
@@ -112,9 +112,9 @@ export default function InfoSection() {
                 <td className="border border-gray-300 px-4 py-2">
                   Setuju : {report.isTrue || 0} Tidak : {report.isFalse || 0}
                 </td>
-                <td className="px-4 py-4 flex items-center">
+                <td className="border border-gray-300 px-10">
                   {reacted ? (
-                    <i className="fas fa-lock text-gray-500"></i> // Show lock icon if reacted
+                    <i className="fas fa-lock text-gray-500"></i>
                   ) : (
                     <>
                       <button
