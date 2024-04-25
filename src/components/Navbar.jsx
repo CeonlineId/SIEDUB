@@ -1,241 +1,219 @@
 import React, { useState } from 'react';
-import { NavLink, Link, useNavigate } from 'react-router-dom';
-import logo from '../assets/images/logoW.png';
-import tutor from '../assets/images/tutor.png';
-import '../utils/firebaseConfig';
-import { getFirestore, addDoc, collection } from 'firebase/firestore';
-import { uploadImageToStorage } from '../utils/uploadImageToStorage';
-import CircularProgress from '@mui/material/CircularProgress';
+import { NavLink } from 'react-router-dom';
+import logo from '../assets/images/logo.png';
+import logoW from '../assets/images/logoW.png';
+import { Link } from 'react-router-dom';
 
-const ReportForm = () => {
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [fullName, setFullName] = useState('');
-  const [disasterType, setDisasterType] = useState('');
-  const [location, setLocation] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
-  const [isUploading, setIsUploading] = useState(false);
-  const [isSending, setIsSending] = useState(false);
+const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const db = getFirestore();
-  let navigate = useNavigate();
-
-  const saveReportData = async () => {
-    setIsSending(true);
-    try {
-      const docRef = await addDoc(collection(db, 'report'), {
-        phoneNumber: phoneNumber,
-        fullName: fullName,
-        disasterType: disasterType,
-        location: location,
-        imageUrl: imageUrl,
-        isTrue: 0,
-        isFalse: 0,
-      });
-      alert('Laporan berhasil dikirim!');
-      navigate('/');
-    } catch (error) {
-      console.error('Error saving data:', error);
-      alert('Gagal mengirim laporan!');
-    }
-    setIsSending(false);
-  };
-
-  const handleFileChange = async event => {
-    const file = event.target.files[0];
-    if (file) {
-      setIsUploading(true);
-      try {
-        const storagePath = `images/${file.name}`;
-        const downloadURL = await uploadImageToStorage(file, storagePath);
-        setImageUrl(downloadURL);
-        setIsUploading(false);
-      } catch (error) {
-        alert('Gagal menambahkan gambar!');
-        setIsUploading(false);
-      }
-    }
-  };
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [informasiBelow, setInformasiBelow] = useState(false);
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+    setSidebarOpen(!sidebarOpen);
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+    setInformasiBelow(!informasiBelow);
   };
 
   return (
-    <>
-      {(isUploading || isSending) && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-          <CircularProgress color="inherit" />
-        </div>
-      )}
-      <nav className="bg-[#FF3D00] text-white p-4 px-4 lg:px-20 fixed top-0 left-0 w-full z-10">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-4 text-lg font-semibold">
-            <button
-              className="block lg:hidden"
-              onClick={toggleSidebar}
+    <nav className="bg-white text-black p-4 px-4 md:px-20 fixed top-0 left-0 w-full z-10">
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="flex items-center gap-4 text-lg font-semibold">
+          <Link to="/" className="w-32 h-10">
+            <img src={logo} alt="Logo" className="w-full h-full" />
+          </Link>
+          <div className="hidden md:flex items-center gap-8">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? 'text-black border-b-2 border-black'
+                  : 'text-black hover:border-b-2 hover:border-black'
+              }
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="w-6 h-6"
+              Beranda
+            </NavLink>
+            <div className="relative">
+              <p
+                className="text-black hover:cursor-pointer hover:border-b-2 hover:border-black flex gap-1 items-center"
+                onClick={toggleDropdown}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              </svg>
-            </button>
-            <Link to="/" className="w-32 h-10">
-              <img src={logo} alt="Logo" className="w-full h-full" />
-            </Link>
-            {/* Tampilkan menu navigasi hanya pada perangkat non-mobile */}
-            <div className="hidden lg:flex items-center gap-4">
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  isActive
-                    ? 'text-white border-b-2 border-white'
-                    : 'text-white hover:border-b-2 hover:border-white'
-                }
-              >
-                Beranda
-              </NavLink>
-              <NavLink
-                to="/informasi"
-                className="border border-white border-3 hover:bg-white focus:bg-white text-white hover:text-[#FF3D00] focus:text-[#FF3D00] font-semibold py-1 px-5 rounded"
-              >
-                Informasi
-              </NavLink>
+                Edukasi
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-4 h-4"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </p>
+              {dropdownOpen && (
+                <div className={`absolute ${informasiBelow ? 'top-full' : 'bottom-full'} left-0 bg-gray-800 shadow-md rounded-md mt-1 py-2 w-48 font-normal text-sm`}>
+                  <NavLink
+                    to="/edukasi/banjir"
+                    className="block px-4 py-2 text-white hover:bg-gray-700"
+                  >
+                    Banjir
+                  </NavLink>
+                  <NavLink
+                    to="/edukasi/kebakaran-hutan"
+                    className="block px-4 py-2 text-white hover:bg-gray-700"
+                  >
+                    Kebakaran Hutan
+                  </NavLink>
+                  <NavLink
+                    to="/edukasi/longsor"
+                    className="block px-4 py-2 text-white hover:bg-gray-700"
+                  >
+                    Longsor
+                  </NavLink>
+                  <NavLink
+                    to="/edukasi/tsunami"
+                    className="block px-4 py-2 text-white hover:bg-gray-700"
+                  >
+                    Tsunami
+                  </NavLink>
+                  <NavLink
+                    to="/edukasi/erupsi-gunung-berapi"
+                    className="block px-4 py-2 text-white hover:bg-gray-700"
+                  >
+                    Erupsi
+                  </NavLink>
+                  <NavLink
+                    to="/edukasi/gempa-bumi"
+                    className="block px-4 py-2 text-white hover:bg-gray-700"
+                  >
+                    Gempa
+                  </NavLink>
+                </div>
+              )}
             </div>
           </div>
         </div>
-      </nav>
-
-      {/* Sidebar */}
-      <div className={`fixed lg:hidden top-0 left-0 h-full w-full bg-[#FF3D00] text-white z-20 transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-        <div className="p-4">
-          {/* Tambahkan link untuk menu navigasi */}
+        <div className="flex gap-4 px-4 md:px-14">
           <NavLink
             to="/informasi"
-            className="block py-2 text-lg text-center border-b border-white"
+            className={
+              location.pathname === '/informasi'
+                ? 'bg-[#FF3D00] text-white font-semibold py-1 px-5 rounded border border-[#FF3D00] hidden md:flex'
+                : 'hover:bg-[#FF3D00] focus:bg-[#FF3D00] text-black hover:text-white focus:text-white font-semibold py-1 px-5 rounded border border-[#FF3D00] hidden md:flex'
+            }
           >
             Informasi
           </NavLink>
-        </div>
-      </div>
-
-      {/* Overlay untuk menutup sidebar */}
-      {isSidebarOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-10"
-          onClick={toggleSidebar}
-        ></div>
-      )}
-
-      {/* Konten Form Pelaporan Bencana */}
-      <section className="mx-auto p-4 flex justify-center items-center min-h-screen relative">
-        {/* Form dan konten lainnya */}
-        <form
-          className="w-full max-w-full grid grid-cols-1 gap-y-2 bg-white p-10 m-8 md:m-32 mt-10 mb-10 text-center rounded-lg shadow-lg"
-          onSubmit={e => {
-            e.preventDefault();
-            saveReportData();
-          }}
-        >
+          {/* Tombol hamburger */}
           <button
-            className="bg-[#FF3D00] text-white p-2 mb-3 rounded-full w-full md:w-96 block mx-auto"
-            disabled
+            className="md:hidden focus:outline-none"
+            onClick={toggleSidebar}
           >
-            Laporkan Bencana
-          </button>
-          <a href="#" className="text-gray-400 pb-3">
-            Cara melapor dengan baik?
-          </a>
-          <input
-            type="number"
-            className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-full md:w-96"
-            placeholder="Nomor Hp"
-            value={phoneNumber}
-            onChange={e => setPhoneNumber(e.target.value)}
-            required
-          />
-          <input
-            type="text"
-            className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-full md:w-96"
-            placeholder="Nama Lengkap"
-            value={fullName}
-            onChange={e => setFullName(e.target.value)}
-            required
-          />
-          <input
-            type="text"
-            className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-full md:w-96"
-            placeholder="Jenis Bencana"
-            value={disasterType}
-            onChange={e => setDisasterType(e.target.value)}
-            required
-          />
-          <input
-            type="text"
-            className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-full md:w-96"
-            placeholder="Lokasi"
-            value={location}
-            onChange={e => setLocation(e.target.value)}
-            required
-          />
-
-          <button className="bg-[#FF3D00] text-white p-2 rounded-xl w-full md:w-19 h-19 block mx-auto relative">
-            <input
-              accept="image/*"
-              capture="environment"
-              type="file"
-              className="absolute inset-0 opacity-0"
-              onChange={handleFileChange}
-              required
-            />
             <svg
               xmlns="http://www.w3.org/2000/svg"
+              className="h-8 w-8 text-black"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth="1"
+              strokeWidth={1.5}
               stroke="currentColor"
-              className="w-12 h-12"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
               />
             </svg>
           </button>
-
-          <p className="text-sm text-slate-400">
-            {imageUrl ? 'Gambar Tersimpan' : 'Kirim Foto Kejadian'}
-          </p>
-          <button
-            type="submit"
-            className="w-full md:w-24 h-10 justify-self-end bg-[#FF3D00] rounded-lg text-white"
-          >
-            Kirim
-          </button>
-        </form>
-      </section>
-
-      <div className="container mx-auto flex flex-col items-center pb-10">
-        <img src={tutor} alt="Tutorial" className="w-full md:w-96 h-28" />
+        </div>
       </div>
-    </>
+      {/* Sidebar */}
+      {sidebarOpen && (
+        <div className="md:hidden fixed inset-y-0 right-0 bg-[#1E1E1E] z-20 w-64 shadow-md">
+          <div className="flex items-center justify-center px-2 mr-10 relative">
+            <img src={logoW} alt="Logo" className="w-42 h-10 m-5 mr-10" />
+            <a onClick={toggleSidebar} className="flex items-center justify-center">
+              <div className="absolute w-8 h-8 bg-white opacity-5 rounded-full"></div>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-white">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+            </a>
+          </div>
+          <div className="flex flex-col py-4 ">
+            <NavLink to="/" className="flex items-center px-4 py-2 text-white hover:bg-gray-700">
+              <div className="flex items-start justify-start px-1 py-2">
+                <svg xmlns="http://www.w3.org/20040/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+              </div>
+              <span className="ml-4">Beranda</span>
+            </NavLink>
+
+            <NavLink className="flex items-center px-4 py-2 text-white hover:bg-gray-700" onClick={toggleDropdown}>
+              <div className="relative">
+                <div className="flex items-start justify-start px-1 py-2" >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                  </svg>
+                  <span className="ml-5">Edukasi</span>
+                </div>
+                {dropdownOpen && (
+                  <div className="absolute top-full left-0 shadow-lg rounded-md mt-1 py-2 w-48 font-normal text-sm border border-gray-600 ml-8">
+                    <NavLink
+                      to="/edukasi/banjir"
+                      className="block px-4 py-2 text-white hover:bg-gray-700"
+                    >
+                      Banjir
+                    </NavLink>
+                    <NavLink
+                      to="/edukasi/kebakaran-hutan"
+                      className="block px-4 py-2 text-white hover:bg-gray-700"
+                    >
+                      Kebakaran Hutan
+                    </NavLink>
+                    <NavLink
+                      to="/edukasi/longsor"
+                      className="block px-4 py-2 text-white hover:bg-gray-700"
+                    >
+                      Longsor
+                    </NavLink>
+                    <NavLink
+                      to="/edukasi/tsunami"
+                      className="block px-4 py-2 text-white hover:bg-gray-700"
+                    >
+                      Tsunami
+                    </NavLink>
+                    <NavLink
+                      to="/edukasi/erupsi-gunung-berapi"
+                      className="block px-4 py-2 text-white hover:bg-gray-700"
+                    >
+                      Erupsi
+                    </NavLink>
+                    <NavLink
+                      to="/edukasi/gempa-bumi"
+                      className="block px-4 py-2 text-white hover:bg-gray-700"
+                    >
+                      Gempa
+                    </NavLink>
+                  </div>
+                )}
+              </div>
+            </NavLink>
+            <NavLink to="/informasi" className={`flex items-center px-4 py-2 text-white hover:bg-gray-700 ${informasiBelow ? 'mt-60' : ''}`}>
+              <div className="flex items-start justify-start px-1 py-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                </svg>
+              </div>
+              <span className="ml-4">Informasi</span>
+            </NavLink>
+          </div>
+        </div>
+      )}
+    </nav>
   );
 };
 
-export default ReportForm;
+export default Navbar;
