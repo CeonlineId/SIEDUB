@@ -15,6 +15,8 @@ const ReportForm = () => {
   const [imageUrl, setImageUrl] = useState('');
   const [isUploading, setIsUploading] = useState(false);
   const [isSending, setIsSending] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const db = getFirestore();
   let navigate = useNavigate();
@@ -56,7 +58,9 @@ const ReportForm = () => {
     }
   };
 
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   return (
     <>
@@ -65,9 +69,28 @@ const ReportForm = () => {
           <CircularProgress color="inherit" />
         </div>
       )}
-      <nav className="bg-[#FF3D00] text-white p-4 px-20 fixed top-0 left-0 w-full z-10">
+      <nav className="bg-[#FF3D00] text-white p-4 px-4 lg:px-20 fixed top-0 left-0 w-full z-10">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4 text-lg font-semibold">
+            <button
+              className="md:hidden focus:outline-none"
+              onClick={toggleSidebar}
+            >
+              <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-8 w-8 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+            </button>
             <Link to="/" className="w-32 h-10">
               <img src={logo} alt="Logo" className="w-full h-full" />
             </Link>
@@ -91,60 +114,25 @@ const ReportForm = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="currentColor"
-                  class="w-4 h-4"
+                  className="w-4 h-4"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="m19.5 8.25-7.5 7.5-7.5-7.5"
                   />
                 </svg>
               </p>
               {dropdownOpen && (
                 <div className="absolute top-full left-0 bg-gray-800 shadow-md rounded-md mt-1 py-2 w-48 font-normal text-sm">
-                  <NavLink
-                    to="/edukasi/banjir"
-                    className="block px-4 py-2 text-white hover:bg-gray-700"
-                  >
-                    Banjir
-                  </NavLink>
-                  <NavLink
-                    to="/edukasi/kebakaran-hutan"
-                    className="block px-4 py-2 text-white hover:bg-gray-700"
-                  >
-                    Kebakaran Hutan
-                  </NavLink>
-                  <NavLink
-                    to="/edukasi/longsor"
-                    className="block px-4 py-2 text-white hover:bg-gray-700"
-                  >
-                    Longsor
-                  </NavLink>
-                  <NavLink
-                    to="/edukasi/tsunami"
-                    className="block px-4 py-2 text-white hover:bg-gray-700"
-                  >
-                    Tsunami
-                  </NavLink>
-                  <NavLink
-                    to="/edukasi/erupsi-gunung-berapi"
-                    className="block px-4 py-2 text-white hover:bg-gray-700"
-                  >
-                    Erupsi
-                  </NavLink>
-                  <NavLink
-                    to="/edukasi/gempa-bumi"
-                    className="block px-4 py-2 text-white hover:bg-gray-700"
-                  >
-                    Gempa
-                  </NavLink>
+                  {/* Link untuk menu dropdown */}
                 </div>
               )}
             </div>
           </div>
-          <div className="flex gap-4 px-14">
+          <div className="hidden lg:flex gap-4 px-14">
             <NavLink
               to="/informasi"
               className="border border-white border-3 hover:bg-white focus:bg-white text-white hover:text-[#FF3D00] focus:text-[#FF3D00] font-semibold py-1 px-5 rounded"
@@ -154,34 +142,41 @@ const ReportForm = () => {
           </div>
         </div>
       </nav>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-        className="pt-16 absolute top-0 left-0 z-0 w"
-      >
-        <path
-          fill="#FF3D00"
-          fillOpacity="1"
-          d="M0,224L26.7,208C53.3,192,107,160,160,149.3C213.3,139,267,149,320,170.7C373.3,192,427,224,480,245.3C533.3,267,587,277,640,256C693.3,235,747,181,800,144C853.3,107,907,85,960,101.3C1013.3,117,1067,171,1120,181.3C1173.3,192,1227,160,1280,160C1333.3,160,1387,192,1413,208L1440,224L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"
-        ></path>
-      </svg>
-      <h1 className="text-4xl text-white text-center font-semibold mt-16 mb-4 relative z-1">
-        Form Pelaporan Bencana
-      </h1>
-      <p className="text-white relative z-2 text-center text-sm">
-        Silahkan Laporkan kejadian <br />
-        Bencana Alam Yang Terjadi di Daerah anda
-      </p>
+
+      {/* Sidebar */}
+      <div className={`fixed lg:hidden top-0 left-0 h-full w-full bg-[#FF3D00] text-white z-20 transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className="p-4">
+          {/* Tambahkan link untuk menu navigasi */}
+          <NavLink
+            to="/informasi"
+            className="block py-2 text-lg text-center border-b border-white"
+          >
+            Informasi
+          </NavLink>
+        </div>
+      </div>
+
+      {/* Overlay untuk menutup sidebar */}
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-10"
+          onClick={toggleSidebar}
+        ></div>
+        
+      )}
+
+      {/* Konten Form Pelaporan Bencana */}
       <section className="mx-auto p-4 flex justify-center items-center min-h-screen relative">
+        {/* Form dan konten lainnya */}
         <form
-          className="w-full max-w-full grid grid-cols-1 gap-y-2 bg-white p-10 m-32 mt-10 mb-10 text-center rounded-lg shadow-lg"
+          className="w-full max-w-full grid grid-cols-1 gap-y-2 bg-white p-10 m-8 md:m-32 mt-10 mb-10 text-center rounded-lg shadow-lg"
           onSubmit={e => {
             e.preventDefault();
             saveReportData();
           }}
         >
           <button
-            className="bg-[#FF3D00] text-white p-2 mb-3 rounded-full w-96 block mx-auto"
+            className="bg-[#FF3D00] text-white p-2 mb-3 rounded-full w-full md:w-96 block mx-auto"
             disabled
           >
             Laporkan Bencana
@@ -191,7 +186,7 @@ const ReportForm = () => {
           </a>
           <input
             type="number"
-            className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-96"
+            className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-full md:w-96"
             placeholder="Nomor Hp"
             value={phoneNumber}
             onChange={e => setPhoneNumber(e.target.value)}
@@ -199,7 +194,7 @@ const ReportForm = () => {
           />
           <input
             type="text"
-            className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-96"
+            className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-full md:w-96"
             placeholder="Nama Lengkap"
             value={fullName}
             onChange={e => setFullName(e.target.value)}
@@ -207,7 +202,7 @@ const ReportForm = () => {
           />
           <input
             type="text"
-            className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-96"
+            className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-full md:w-96"
             placeholder="Jenis Bencana"
             value={disasterType}
             onChange={e => setDisasterType(e.target.value)}
@@ -215,14 +210,14 @@ const ReportForm = () => {
           />
           <input
             type="text"
-            className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-96"
+            className="mx-auto bg bg-gray-100 p-3 mb-6 rounded-xl w-full md:w-96"
             placeholder="Lokasi"
             value={location}
             onChange={e => setLocation(e.target.value)}
             required
           />
 
-          <button className="bg-[#FF3D00] text-white p-2 rounded-xl w-19 h-19 block mx-auto relative">
+          <button className="bg-[#FF3D00] text-white p-2 rounded-xl w-full md:w-19 h-19 block mx-auto relative">
             <input
               accept="image/*"
               capture="environment"
@@ -257,14 +252,15 @@ const ReportForm = () => {
           </p>
           <button
             type="submit"
-            className="w-24 h-10 justify-self-end bg-[#FF3D00] rounded-lg text-white"
+            className="w-full md:w-24 h-10 justify-self-end bg-[#FF3D00] rounded-lg text-white"
           >
             Kirim
           </button>
         </form>
       </section>
+
       <div className="container mx-auto flex flex-col items-center pb-10">
-        <img src={tutor} alt="Tutorial" className="w-96 h-28" />
+        <img src={tutor} alt="Tutorial" className="w-full md:w-96 h-28" />
       </div>
     </>
   );

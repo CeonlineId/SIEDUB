@@ -62,14 +62,14 @@ export default function InfoSection() {
   };
 
   return (
-    <div className="text-center mt-24 mx-auto">
+    <div className="text-center mt-24 mx-auto p-10 justify-center items-center">
       <h1 className="font-semibold text-4xl">Data Informasi Pelaporan</h1>
       <p className="pt-3">
         Ini merupakan informasi mengenai <br /> bencana alam yang terjadi
         disekitar
         <br /> lingkungan masyarakat
       </p>
-      <table className="border-collapse border border-gray-600 rounded-lg mt-4 mx-auto">
+      <table className="border-collapse border border-gray-600 rounded-lg mt-4 mx-auto ">
         <thead>
           <tr>
             <th className="border border-gray-400 bg-gray-300 px-4 py-2 font-normal">

@@ -15,13 +15,13 @@ export default function Footer() {
         </div>
         <div className="flex flex-col items-center ">
           <p>Di dukung oleh</p>
-          <img src={Dukungan} alt="dkg" className="w-64 h-13 pt-4" />
-          <div className="flex gap-4 font-semibold text-sm opacity-70 pt-4 pb-4">
-            <a href="/">BERANDA</a>
-            <a href="/edukasi">EDUKASI</a>
-            <a href="/informasi">INFORMASI</a>
-            <a href="/lapor">LAPOR</a>
-            <a href="/about">TENTANG KAMI</a>
+          <img src={Dukungan} alt="dkg" className="w-64 h-13 pt-4 item-center" />
+          <div className="flex gap-4 font-semibold text-sm opacity-70 pt-4 pb-4 ">
+            <a href="/" className='text-center'>BERANDA</a>
+            <a href="/edukasi" className='text-center'>EDUKASI</a>
+            <a href="/informasi" className='text-center'>INFORMASI</a>
+            <a href="/lapor" className='text-center'>LAPOR</a>
+            <a href="/about" className='text-center'>TENTANG KAMI</a>
           </div>
           <p className="opacity-50 text-sm">
             Copyright 2024.
