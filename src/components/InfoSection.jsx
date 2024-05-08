@@ -69,38 +69,38 @@ export default function InfoSection() {
         disekitar
         <br /> lingkungan masyarakat
       </p>
-      <table className="border-collapse border border-gray-300 rounded-lg mt-4 mx-auto ">
+      <table className="border-collapse border border-gray-300 rounded-lg mt-4 mx-auto text-sm md:text-md">
         <thead>
           <tr>
-            <th className="border border-gray-400 bg-gray-300 px-4 py-2 font-normal">
+            <th className="border border-gray-400 bg-gray-300 px-2 py-2 md:px-4 md:py-2 font-normal">
               No
             </th>
-            <th className="border border-gray-400 bg-gray-300 px-4 py-2 font-normal w-72 text-start">
+            <th className="border border-gray-400 bg-gray-300 px-2 py-2 md:px-4 md:py-2 font-normal w-32 md:w-72 sm:w-20 text-start">
               Nama Bencana
             </th>
-            <th className="border border-gray-400 bg-gray-300 px-4 py-2 font-normal w-96 text-start">
+            <th className="border border-gray-400 bg-gray-300 px-2 py-2 md:px-4 md:py-2 font-normal w-20 md:w-96 text-start">
               Lokasi
             </th>
-            <th className="border border-gray-400 bg-gray-300 px-4 py-2 font-normal w-32 text-start">
+            <th className="border border-gray-400 bg-gray-300 px-2 py-2 md:px-4 md:py-2 font-normal w-48 md:w-32 text-start">
               Suara
             </th>
-            <th className="border border-gray-400 bg-gray-300 px-4 py-2 font-normal w-24">
+            <th className="border border-gray-400 bg-gray-300 px-2 py-2 md:px-4 md:py-2 font-normal w-24">
               Y/N
             </th>
           </tr>
         </thead>
-        <tbody className="text-start">
+        <tbody className="text-start ml-2">
           {reports.map((report, index) => {
             const reacted = localStorage.getItem(`reacted-${report.id}`);
             return (
               <tr key={report.id}>
-                <td className="border border-gray-300 px-4 py-2">
+                <td className="border border-gray-300 px-2 py-2 md:px-4 md:py-2">
                   {index + 1}
                 </td>
-                <td className="border border-gray-300 px-4 py-2">
+                <td className="border border-gray-300 px-2 py-2 md:px-4 md:py-2">
                   {report.disasterType}
                 </td>
-                <td className="border border-gray-300 px-4 py-2 text-blue-500 underline">
+                <td className="border border-gray-300 px-2 py-2 md:px-4 md:py-2 text-blue-500 underline">
                   <a
                     href={report.imageUrl}
                     target="_blank"
@@ -109,24 +109,24 @@ export default function InfoSection() {
                     {report.location}
                   </a>
                 </td>
-                <td className="border border-gray-300 px-4 py-2">
-                  Setuju : {report.isTrue || 0} Tidak : {report.isFalse || 0}
+                <td className="border border-gray-300 px-2 py-2 md:px-4 md:py-2">
+                  Setuju : {report.isTrue || 0} <br /> Tidak : {report.isFalse || 0}
                 </td>
-                <td className="border border-gray-300 px-10">
+                <td className="border border-gray-300 items-center justify-center">
                   {reacted ? (
-                    <i className="fas fa-lock text-gray-500"></i>
+                    <i className="fas fa-lock text-gray-500 ml-4 md:ml-10"></i>
                   ) : (
                     <>
                       <button
                         onClick={() => handleConfirm(report.id, 'yes')}
-                        className="mr-2 text-green-500 p-2 rounded inline-flex items-center justify-center hover:bg-green-100"
+                        className="ml-4 md:ml-6 text-green-500 rounded inline-flex items-center justify-center hover:bg-green-100"
                         aria-label="Like"
                       >
                         <i className="fas fa-thumbs-up"></i>
                       </button>
                       <button
                         onClick={() => handleConfirm(report.id, 'no')}
-                        className="text-red-500 p-2 rounded inline-flex items-center justify-center hover:bg-red-100"
+                        className="ml-4 text-red-500 rounded inline-flex items-center justify-center hover:bg-red-100"
                         aria-label="Dislike"
                       >
                         <i className="fas fa-thumbs-down"></i>
