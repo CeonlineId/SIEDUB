@@ -391,19 +391,6 @@ const ReportForm = () => {
 
           <div className="container mx-auto flex flex-col items-center pb-10">
             <img src={tutor} alt="Tutorial" className="w-63 h-48 md:w-48 md:h-20" />
-            <h3 className="text-xl mt-4 font-semibold text-[#FF3D00]">
-              Bagaimana Cara Melaporkan Bencana
-            </h3>
-            <p className="text-center mt-4 text-gray-400">
-              Kami menyediakan tutorial yang mudah dipahami untuk membantu Anda
-              melaporkan bencana secara cepat dan akurat
-            </p>
-            <a
-              href="#"
-              className="bg-[#FF3D00] text-white py-2 px-8 rounded-full mt-4"
-            >
-              Lihat Tutorial
-            </a>
           </div>
         </div>
     </>

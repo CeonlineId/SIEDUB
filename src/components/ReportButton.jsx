@@ -1,16 +1,28 @@
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from '@react-hook/media-query';
 
 export default function ReportButton() {
   let navigate = useNavigate();
   const isLargeScreen = useMediaQuery('(min-width: 1024px)');
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleClick = () => {
+    if (isLargeScreen) {
+      setShowPopup(true);
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 3000); // Ubah angka 3000 menjadi durasi yang Anda inginkan (dalam milidetik)
+    } else {
+      navigate('/lapor');
+    }
+  };
 
   return (
     <div className="fixed bottom-8 right-10 z-50">
       <button
-        onClick={() => navigate('/lapor')}
-        className={`bg-[#FF3D00] text-white font-bold py-4 px-4 rounded-xl ${isLargeScreen ? 'pointer-events-none' : ''}`}
-        disabled={isLargeScreen}
+        onClick={handleClick}
+        className={`bg-[#FF3D00] text-white font-bold py-4 px-4 rounded-xl `}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -28,6 +40,11 @@ export default function ReportButton() {
           />
         </svg>
       </button>
+      {showPopup && (
+        <div className="absolute bottom-16 right-10 bg-white border border-gray-300 shadow-md p-4 rounded-md text-sm w-64 text-gray-700">
+          <span>Tombol ini tidak dapat diakses pada Desktop. Silakan gunakan pada perangkat mobile atau tablet.</span>
+        </div>
+      )}
     </div>
   );
 }

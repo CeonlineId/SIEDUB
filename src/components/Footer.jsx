@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="flex flex-col items-center ">
           <p>Di dukung oleh</p>
           <img src={Dukungan} alt="dkg" className="w-64 h-13 pt-4 item-center" />
-          <div className="flex gap-2 md:gap-1 font-semibold text-sm justify-center opacity-70 pt-4 pb-4 ">
+          <div className="flex gap-2 md:gap-1 font-semibold text-xs justify-center opacity-70 pt-4 pb-4 sm:text-sm ">
             <a href="/" className='text-center'>BERANDA</a>
             <a href="/edukasi" className='text-center'>EDUKASI</a>
             <a href="/informasi" className='text-center'>INFORMASI</a>
@@ -35,13 +35,13 @@ export default function Footer() {
         <div className="flex flex-col items-center">
           <p>Lebih dekat dengan kami</p>
           <div className="flex gap-7 pt-4">
-            <a href="#">
+            <a href="https://www.instagram.com/ceonline_id/" target="_blank" rel="Instagram">
               <img src={Ig} alt="Instagram" className="w-30 h-10 " />
             </a>
-            <a href="">
+            <a href="https://github.com/CeonlineId" target="_blank" rel="GitHub">
               <img src={Git} alt="GitHub" className="w-30 h-10 " />
             </a>
-            <a href="">
+            <a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=ceonline.id@gmail.com" target="_blank" rel="Email">
               <img src={Mail} alt="Email" className="w-30 h-10 " />
             </a>
           </div>
