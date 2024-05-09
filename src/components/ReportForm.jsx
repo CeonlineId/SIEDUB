@@ -194,7 +194,7 @@ const ReportForm = () => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 320"
-            className="pt-16 absolute top-0 left-0 z-0 w-full"
+            className="pt-40 sm:pt-52 absolute top-0 left-0 z-0 w-full "
           >
             <path
               fill="#FF3D00"
@@ -202,13 +202,15 @@ const ReportForm = () => {
               d="M0,224L26.7,208C53.3,192,107,160,160,149.3C213.3,139,267,149,320,170.7C373.3,192,427,224,480,245.3C533.3,267,587,277,640,256C693.3,235,747,181,800,144C853.3,107,907,85,960,101.3C1013.3,117,1067,171,1120,181.3C1173.3,192,1227,160,1280,160C1333.3,160,1387,192,1413,208L1440,224L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"
             ></path>
           </svg>
-          <h1 className="text-4xl text-white text-center font-semibold mt-20 mb-4 relative ">
+          <div className='bg-[#FF3D00]'>
+          <h1 className="text-4xl text-white text-center font-semibold mt-16 mb-2 md:mt-18 md:p-10 relative ">
             Form Pelaporan Bencana
           </h1>
-          <p className="text-white relative  text-center text-sm">
+          <p className=" text-white relative text-center text-sm ">
             Silahkan Laporkan kejadian <br />
             Bencana Alam Yang Terjadi di Daerah anda
           </p>
+          </div>
           {/* Sidebar */}
           {sidebarOpen && (
             <div className="md:hidden fixed inset-y-0 right-0 bg-[#1E1E1E] z-20 w-64 shadow-md">
@@ -295,6 +297,7 @@ const ReportForm = () => {
 
           {/* Form Pelaporan */}
           <div className="container mx-auto px-4 ">
+          
             {/* Form inputs here */}
             <section className="mx-auto p-4 flex justify-center items-center min-h-screen relative">
             {/* Form dan konten lainnya */}
