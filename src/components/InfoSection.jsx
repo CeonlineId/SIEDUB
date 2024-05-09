@@ -62,7 +62,7 @@ export default function InfoSection() {
   };
 
   return (
-    <div className="text-center mt-24 mx-auto p-10 justify-center items-center">
+    <div className="text-center mt-24 mx-auto p-10 justify-center items-center h-screen">
       <h1 className="font-semibold text-4xl">Data Informasi Pelaporan</h1>
       <p className="pt-3">
         Ini merupakan informasi mengenai <br /> bencana alam yang terjadi
@@ -111,7 +111,8 @@ export default function InfoSection() {
                     </a>
                   </td>
                   <td className="border border-gray-300 px-2 py-2 md:px-4 md:py-2">
-                    Setuju : {report.isTrue || 0} <br /> Tidak : {report.isFalse || 0}
+                    Setuju : {report.isTrue || 0} <br /> Tidak :{' '}
+                    {report.isFalse || 0}
                   </td>
                   <td className="border border-gray-300 items-center justify-center">
                     {reacted ? (
