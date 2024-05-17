@@ -14,21 +14,21 @@ const EduSection = () => {
             <p className="text-sm text-center mt-4 tracking-wider">Ini merupakan edukasi tentang <br /> bagaimana jika terjadi bencana <br /> alam (Kebakaran Hutan) di daerah kalian</p>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 pb-20 pt-10">
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl ">
-                <div className="bg-[#FF3D00] text-white w-20 h-10 flex items-center rounded-lg justify-center mr-0 md:mr-4 p-2">
+                <div className="bg-[#FF3D00] text-white w-20 md:w-16 h-10 flex items-center rounded-lg justify-center mr-0 md:mr-4 p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
                     </svg>
                 </div>
                 <div className="p-2">
                     <h2 className="font-semibold p-1">Pengertian dan Penyebab </h2><hr className="border-gray-400" />
-                    <h2 className="text-xl font-semibold mb-1 mt-3 pl-10">Kebakaran Hutan</h2>
-                    <p className="text-gray-600 pl-10 pb-5">Kebakaran hutan adalah penyebaran api yang tidak terkendali di area hutan. Penyebabnya meliputi aktivitas manusia seperti pembakaran lahan, cuaca ekstrem seperti panas dan petir, serta vegetasi yang mudah terbakar. Dampaknya mencakup kerusakan habitat, penurunan kualitas udara, dan kerugian ekonomi. Pencegahan dan tanggapan cepat sangat penting untuk melindungi hutan dan kehidupan manusia.</p>
+                    <h2 className="text-xl font-semibold mb-1 mt-3">Kebakaran Hutan</h2>
+                    <p className="text-gray-600 pb-5">Kebakaran hutan adalah penyebaran api yang tidak terkendali di area hutan. Penyebabnya meliputi aktivitas manusia seperti pembakaran lahan, cuaca ekstrem seperti panas dan petir, serta vegetasi yang mudah terbakar.</p>
                 </div>
             </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-8 w">
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-20 h-10 md:w-16 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-2">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-28 h-10 md:w-16 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-2">
                     1
                 </div>
                 <div className="p-2">
@@ -43,7 +43,7 @@ const EduSection = () => {
             </div>
 
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-20 h-10 md:w-14 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-1">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-32 h-10 md:w-14 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-1">
                     2
                 </div>
                 <div className="p-2">
@@ -58,7 +58,7 @@ const EduSection = () => {
             </div>
 
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-24 h-10 md:w-16 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-1">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-36 h-10 md:w-16 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-1">
                     3
                 </div>
                 <div className="p-2">
@@ -73,7 +73,7 @@ const EduSection = () => {
             </div>
 
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-20 h-10 md:w-14 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-1">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-32 h-10 md:w-14 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-1">
                     4
                 </div>
                 <div className="p-2">
@@ -96,8 +96,8 @@ const EduSection = () => {
                 </div>
                 <div className="p-2">
                     <h2 className="font-semibold p-1">Tips Mencegah Kebakaran Hutan</h2><hr className="border-gray-400" />
-                    <h2 className="text-xl font-semibold mb-1 mt-3 pl-10">Ini Merupakan Beberapa Tips Untuk Mencegah Bencana Alam Kebakaran Hutan</h2>
-                    <p className="text-gray-600 pl-10 pb-5">Untuk mencegah kebakaran hutan, hindari pembakaran sampah dan merokok di area hutan. Pastikan izin resmi saat membakar lahan, dan lakukan pemeliharaan lahan dengan membersihkan sisa-sisa tanaman yang mudah terbakar. Pasang perangkat pencegah petir dan sosialisasikan pencegahan kebakaran kepada masyarakat. Gunakan api dengan bijak, pantau kondisi cuaca, dan berikan pelatihan kepada masyarakat dan tim pemadam kebakaran. Dengan tindakan ini, kita dapat mencegah kebakaran hutan dan melindungi lingkungan serta kehidupan.</p>
+                    <h2 className="text-xl font-semibold mb-1 mt-3">Ini Merupakan Beberapa Tips Untuk Mencegah Bencana Alam Kebakaran Hutan</h2>
+                    <p className="text-gray-600 pb-5">Mencegah kebakaran hutan memerlukan tindakan bijaksana dan terkoordinasi. Pertama, hindari pembakaran lahan, terutama di musim kemarau, dan jika harus, lakukan dengan izin dan pengawasan yang ketat. Edukasi masyarakat tentang bahaya kebakaran dan ajarkan praktik bertanggung jawab, seperti tidak membuang puntung rokok sembarangan.</p>
                 </div>
             </div>
         </div>

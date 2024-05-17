@@ -21,14 +21,14 @@ const EduSection = () => {
                 </div>
                 <div className="p-2">
                     <h2 className="font-semibold p-1">Pengertian dan Penyebab </h2><hr className="border-gray-400" />
-                    <h2 className="text-xl font-semibold mb-1 mt-3 pl-10">Banjir</h2>
-                    <p className="text-gray-600 pl-10 pb-5">Banjir adalah peristiwa alam di mana air meluap dan mencakup area yang biasanya kering. Penyebabnya bisa termasuk hujan deras, sungai yang meluap, topografi datar, pencairan salju, letusan gunung berapi, perubahan tanah oleh manusia, serta infrastruktur yang buruk. Perubahan iklim juga semakin mempengaruhi kejadian banjir.</p>
+                    <h2 className="text-xl font-semibold mb-1 mt-3">Banjir</h2>
+                    <p className="text-gray-600 pb-5">Banjir adalah peristiwa alam di mana air meluap dan mencakup area yang biasanya kering. Penyebabnya bisa termasuk hujan deras, sungai yang meluap, topografi datar, pencairan salju, letusan gunung berapi, perubahan tanah oleh manusia, serta infrastruktur yang buruk. Perubahan iklim juga semakin mempengaruhi kejadian banjir.</p>
                 </div>
             </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-8 w">
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-40 h-10 md:w-32 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-1">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-20 h-10 md:w-18 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-1">
                     1
                 </div>
                 <div className="p-2">
@@ -38,12 +38,12 @@ const EduSection = () => {
                             <h1 className="font-semibold text-2xl">1</h1>
                             <h2 className="text-md font-semibold">Langkah Pertama</h2>
                         </div>
-                    <p className="text-gray-600 pb-5 pl-8">Pertama-tama, penting untuk selalu waspada terhadap kondisi cuaca dan peringatan banjir dari otoritas setempat. Perhatikan tanda-tanda awal banjir seperti peningkatan tinggi air sungai atau genangan air di sekitar area Anda.</p>
+                    <p className="text-gray-600 pb-5 pl-8">Selalu waspada terhadap kondisi cuaca dan peringatan banjir dari otoritas setempat</p>
                 </div>
             </div>
 
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-40 h-10 md:w-32 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-1">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-28 h-10 md:w-28 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-1">
                     2
                 </div>
                 <div className="p-2">
@@ -53,12 +53,12 @@ const EduSection = () => {
                             <h1 className="font-semibold text-2xl">2</h1>
                             <h2 className="text-md font-semibold">Langkah Kedua</h2>
                         </div>
-                    <p className="text-gray-600 pb-5 pl-9">Jika Anda mendapatkan peringatan atau melihat tanda-tanda banjir, segera pindah ke tempat yang lebih tinggi. Pindahlah ke lantai atas rumah atau bangunan, atau ke tempat yang lebih tinggi di daerah sekitar Anda.</p>
+                    <p className="text-gray-600 pb-5 pl-9">JJika anda mendapatkan peringatan atau melihat tanda - tanda banjir, segera pindah ke tempat yang lebih tinggi di sekitar anda.</p>
                 </div>
             </div>
 
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-28 h-10 md:w-24 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-1">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-28 h-10 md:w-26 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-1">
                     3
                 </div>
                 <div className="p-2">
@@ -68,12 +68,12 @@ const EduSection = () => {
                             <h1 className="font-semibold text-2xl">3</h1>
                             <h2 className="text-md font-semibold">Langkah Ketiga</h2>
                         </div>
-                    <p className="text-gray-600 pb-5 pl-8">Jika Anda terjebak di area yang terendam banjir, carilah jalur evakuasi yang aman. Hindari berjalan melawan arus air dan cari rute yang lebih tinggi dan stabil.</p>
+                    <p className="text-gray-600 pb-5 pl-8">Jika anda terjebak di area yang terendam banjir, carilah jalur evakuasi yang aman, hindari jalur yang melawan arus banjir.</p>
                 </div>
             </div>
 
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-44 h-10 md:w-36 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-1">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-36 h-10 md:w-36 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-1">
                     4
                 </div>
                 <div className="p-2">
@@ -82,22 +82,21 @@ const EduSection = () => {
                         <div className="flex gap-5 items-center">
                             <h1 className="font-semibold text-2xl">4</h1>
                             <h2 className="text-md font-semibold">Langkah Keempat</h2>
-                        </div>
-                    <p className="text-gray-600 pb-5 pl-8">Jika Anda memerlukan bantuan atau merasa dalam bahaya, segera hubungi layanan darurat setempat seperti polisi, pemadam kebakaran, atau tim penyelamat. Berikan informasi yang jelas tentang lokasi Anda dan situasi yang sedang terjadi.</p>
+                        </div><p>Jika anda memerlukan bantuan atau merasa dalam bahaya, segera hubungi layanan darurat setempat seperti polisi, pemadam kebakaran atau tim penyelamat lainnya.</p>
                 </div>
             </div>  
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 pt-20">
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl ">
-                <div className="bg-[#FF3D00] text-white w-28 h-10 md:w-11 md:h-10 flex items-center rounded-lg justify-center mr-0 md:mr-4 p-1">
+                <div className="bg-[#FF3D00] text-white w-40 h-10 md:w-11 md:h-10 flex items-center rounded-lg justify-center mr-0 md:mr-4 p-1">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
                     </svg>
                 </div>
                 <div className="p-2">
                     <h2 className="font-semibold p-1">Tips Mencegah Banjir</h2><hr className="border-gray-400" />
-                    <h2 className="text-xl font-semibold mb-1 mt-3 pl-10">Ini Merupakan Beberapa Tips Untuk Mencegah Bencana Alam Banjir</h2>
-                    <p className="text-gray-600 pl-10 pb-5">Membangun tanggul, merawat saluran air, dan menghindari pemukiman di daerah rawan banjir sangat penting untuk mengurangi risiko banjir.</p>
+                    <h2 className="text-xl font-semibold mb-1 mt-3">Ini Merupakan Beberapa Tips Untuk Mencegah Bencana Alam Banjir</h2>
+                    <p className="text-gray-600 pb-5">Membangun tanggul, merawat saluran air, dan menghindari pemukiman di daerah rawan banjir sangat penting untuk mengurangi risiko banjir.</p>
                 </div>
             </div>
         </div>

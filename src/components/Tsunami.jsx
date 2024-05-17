@@ -21,14 +21,14 @@ const EduSection = () => {
                 </div>
                 <div className="p-2">
                     <h2 className="font-semibold p-1">Pengertian dan Penyebab </h2><hr className="border-gray-400" />
-                    <h2 className="text-xl font-semibold mb-1 mt-3 pl-10">Tsunami</h2>
-                    <p className="text-gray-600 pl-10 pb-5">Tsunami adalah gelombang laut besar yang disebabkan oleh gempa bumi, letusan gunung api bawah laut, atau longsor laut. Penyebabnya adalah pergerakan lempeng tektonik yang memicu gelombang besar di atas laut. Tsunami dapat menyebabkan kerusakan parah dan korban jiwa.</p>
+                    <h2 className="text-xl font-semibold mb-1 mt-3">Tsunami</h2>
+                    <p className="text-gray-600 pb-5">Tsunami adalah gelombang laut besar yang disebabkan oleh gempa bumi, letusan gunung api bawah laut, atau longsor laut. Penyebabnya adalah pergerakan lempeng tektonik yang memicu gelombang besar di atas laut. Tsunami dapat menyebabkan kerusakan parah dan korban jiwa.</p>
                 </div>
             </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-8 w">
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-40 h-10 md:w-28 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-2">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-40 h-10 md:w-32 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-2">
                     1
                 </div>
                 <div className="p-2">
@@ -38,12 +38,12 @@ const EduSection = () => {
                             <h1 className="font-semibold text-2xl">1</h1>
                             <h2 className="text-md font-semibold">Langkah Pertama</h2>
                         </div>
-                    <p className="text-gray-600 pb-5 pl-8">Begitu merasakan getaran gempa yang kuat atau mendengar peringatan tsunami, segera pergi ke daerah yang lebih tinggi dari permukaan laut. Tempat-tempat seperti bukit, gedung bertingkat tinggi, atau struktur bangunan yang kuat bisa menjadi tempat berlindung yang lebih aman.</p>
+                    <p className="text-gray-600 pb-5 pl-8">Salah satu tanda utama tsunami adalah gempa bumi besar yang berlangsung lebih dari 20 detik. Jika Anda berada di daerah pesisir dan merasakan gempa bumi, segera bersiap untuk kemungkinan tsunami.</p>
                 </div>
             </div>
 
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-32 h-10 md:w-24 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-2">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-48 h-10 md:w-36 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-2">
                     2
                 </div>
                 <div className="p-2">
@@ -58,7 +58,7 @@ const EduSection = () => {
             </div>
 
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-36 h-10 md:w-24 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-1">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-52 h-10 md:w-36 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-1">
                     3
                 </div>
                 <div className="p-2">
@@ -73,12 +73,12 @@ const EduSection = () => {
             </div>
 
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-20 h-10 flex items-center justify-center mr-4 p-2">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-40 md:w-28 h-10 flex items-center justify-center mr-4 p-2">
                     4
                 </div>
                 <div className="p-2">
                     <h2 className="font-semibold">Mendengarkan Radio atau Sumber Informasi Terpercaya</h2>
-                    <img src={t3} alt="Logo" className="w-96 h-auto ml-10 mb-3" />
+                    <img src={t3} alt="Logo" className="w-96 h-auto ml-3 mb-3" />
                         <div className="flex gap-5 items-center">
                             <h1 className="font-semibold text-2xl">4</h1>
                             <h2 className="text-md font-semibold">Langkah Keempat</h2>
@@ -96,8 +96,8 @@ const EduSection = () => {
                 </div>
                 <div className="p-2">
                     <h2 className="font-semibold p-1">Tips Mencegah Tsunami</h2><hr className="border-gray-400" />
-                    <h2 className="text-xl font-semibold mb-1 mt-3 pl-10">Ini Merupakan Beberapa Tips Untuk Mencegah Bencana Alam Tsunami</h2>
-                    <p className="text-gray-600 pl-10 pb-5">Untuk mencegah bencana alam tsunami, penting untuk meningkatkan kesadaran masyarakat tentang bahayanya serta cara menghadapinya melalui pendidikan dan penyuluhan. Sistem peringatan dini yang efektif harus dibangun untuk memberikan informasi cepat dan akurat kepada masyarakat. Identifikasi zona-zona bahaya tsunami dan bangun infrastruktur tahan gempa dan tsunami di daerah-daerah rentan. Lakukan latihan evakuasi dan berikan pelatihan darurat kepada masyarakat. Lindungi hutan mangrove dan ekosistem pesisir lainnya yang dapat meredam gelombang tsunami. Terus pantau aktivitas seismik dan laut serta lakukan penelitian untuk meningkatkan pemahaman dan sistem peringatan dini. Dengan langkah-langkah ini, kita dapat mengurangi risiko dan mempersiapkan diri lebih baik untuk menghadapi ancaman tsunami.</p>
+                    <h2 className="text-xl font-semibold mb-1 mt-3">Ini Merupakan Beberapa Tips Untuk Mencegah Bencana Alam Tsunami</h2>
+                    <p className="text-gray-600 pb-5">Untuk mencegah kerugian saat tsunami, pahami resiko tinggal di daerah rawan, kenali tanda-tanda awal seperti gempa bumi, ikuti peringatan dini, buat rencana evakuasi, dan siapkan tas darurat.</p>
                 </div>
             </div>
         </div>

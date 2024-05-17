@@ -12,4 +12,10 @@
       opacity: 1; /* Berakhir dengan opasitas 1 */
     }
   }
+
+.disabled-link {
+    pointer-events: none;
+    color: gray;
+    cursor: not-allowed;
+  }
   

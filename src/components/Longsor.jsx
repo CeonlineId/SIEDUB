@@ -21,8 +21,8 @@ const EduSection = () => {
                 </div>
                 <div className="p-2">
                     <h2 className="font-semibold p-1">Pengertian dan Penyebab </h2><hr className="border-gray-400" />
-                    <h2 className="text-xl font-semibold mb-1 mt-3 pl-10">Longsor</h2>
-                    <p className="text-gray-600 pl-10 pb-5">Longsor adalah peristiwa ketika tanah atau batuan tiba-tiba jatuh dari lereng. Penyebabnya bisa beragam, termasuk hujan deras, pengikisan oleh air, pembangunan, gempa bumi, kondisi geologi, dan deforestasi.</p>
+                    <h2 className="text-xl font-semibold mb-1 mt-3">Longsor</h2>
+                    <p className="text-gray-600 pb-5">Longsor adalah peristiwa ketika tanah atau batuan tiba-tiba jatuh dari lereng. Penyebabnya bisa beragam, termasuk hujan deras, pengikisan oleh air, pembangunan, gempa bumi, kondisi geologi, dan deforestasi.</p>
                 </div>
             </div>
         </div>
@@ -38,27 +38,27 @@ const EduSection = () => {
                             <h1 className="font-semibold text-2xl">1</h1>
                             <h2 className="text-md font-semibold">Langkah Pertama</h2>
                         </div>
-                    <p className="text-gray-600 pb-5 pl-8">Jika Anda melihat tanah atau batuan bergerak, segera cari tempat perlindungan. Pilihlah tempat yang terlindung dari longsoran, seperti di balik batu besar atau pohon besar. Hindari berlindung di bawah pohon kecil atau di dekat tepi tebing.</p>
+                    <p className="text-gray-600 pb-5 pl-8">Ketika tanda-tanda longsor mulai terlihat, seperti retakan pada tanah atau suara gemuruh, segera evakuasi dari daerah rawan ke tempat yang lebih tinggi dan aman.</p>
                 </div>
             </div>
 
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-36 h-10 md:w-24 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-2">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-32 h-10 md:w-24 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-2">
                     2
                 </div>
                 <div className="p-2">
-                    <h2 className="font-semibold">Berusaha Naik ke Tempat yang Lebih Tinggi</h2>
+                    <h2 className="font-semibold">Hindari Area Berpotensi Longsor</h2>
                     <img src={l2} alt="Logo" className="w-80 h-44 ml-0 mb-0 md:ml-10 md:mb-3 md:w-96 md:h-auto" />
                         <div className="flex gap-5 items-center">
                             <h1 className="font-semibold text-2xl">2</h1>
                             <h2 className="text-md font-semibold">Langkah Kedua</h2>
                         </div>
-                    <p className="text-gray-600 pb-5 pl-9">Jika Anda tidak dapat mencapai tempat perlindungan, berusaha untuk naik ke tempat yang lebih tinggi. Longsoran cenderung bergerak ke arah bawah, jadi berada di tempat yang lebih tinggi dapat meningkatkan keselamatan Anda.</p>
+                    <p className="text-gray-600 pb-5 pl-9">Sebaiknya hindari berada di dekat lereng atau tebing selama musim hujan, terutama jika daerah tersebut telah diketahui rawan longsor. </p>
                 </div>
             </div>
 
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-28 h-10 md:w-20 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-2">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-36 h-10 md:w-28 md:h-10 flex items-center justify-center mr-0 md:mr-4 p-2">
                     3
                 </div>
                 <div className="p-2">
@@ -73,7 +73,7 @@ const EduSection = () => {
             </div>
 
             <div className="relative bg-white rounded-lg shadow-lg flex transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-                <div className="bg-[#FF3D00] text-white rounded-lg w-32 h-10 flex items-center justify-center mr-0 md:mr-4 p-2">
+                <div className="bg-[#FF3D00] text-white rounded-lg w-40 md:w-32 h-10 flex items-center justify-center mr-0 md:mr-4 p-2">
                     4
                 </div>
                 <div className="p-2">
@@ -96,8 +96,8 @@ const EduSection = () => {
                 </div>
                 <div className="p-2">
                     <h2 className="font-semibold p-1">Tips Mencegah Longsor</h2><hr className="border-gray-400" />
-                    <h2 className="text-xl font-semibold mb-1 mt-3 pl-10">Ini Merupakan Beberapa Tips Untuk Mencegah Bencana Alam Longsor</h2>
-                    <p className="text-gray-600 pl-10 pb-5">Untuk mencegah bencana alam longsor, langkah-langkah pencegahan yang dapat dilakukan antara lain adalah mengidentifikasi area rentan longsor dan menggunakan peta bahaya longsor, menjaga kestabilan tanah dengan menanam pohon dan menerapkan teknik konservasi tanah, memastikan sistem drainase yang baik untuk menghindari genangan air, menggunakan teknik penguatan lereng seperti terracing, menjaga jalan dan bangunan agar tidak merusak tanah, menghindari pembangunan di lereng curam, membangun sistem peringatan dini, mengedukasi masyarakat tentang bahaya longsor, menyusun rencana darurat dan melaksanakan latihan evakuasi secara berkala, serta terus memantau kondisi lingkungan dan mengevaluasi efektivitas langkah-langkah pencegahan yang telah diimplementasikan. Dengan kolaborasi antara pemerintah, komunitas, dan ahli geologi, upaya pencegahan longsor dapat dilakukan secara efektif.</p>
+                    <h2 className="text-xl font-semibold mb-1 mt-3">Ini Merupakan Beberapa Tips Untuk Mencegah Bencana Alam Longsor</h2>
+                    <p className="text-gray-600 pb-5">Memasang sistem pemantauan dan peringatan dini di daerah rawan longsor, sehingga pergerakan tanah dapat dideteksi secara real-time dan peringatan dapat diberikan kepada warga untuk segera evakuasi.</p>
                 </div>
             </div>
         </div>

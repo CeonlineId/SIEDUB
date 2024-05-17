@@ -20,7 +20,7 @@ export default function Footer() {
             <a href="/" className='text-center'>BERANDA</a>
             <a href="/edukasi" className='text-center'>EDUKASI</a>
             <a href="/informasi" className='text-center'>INFORMASI</a>
-            <a href="/lapor" className='text-center'>LAPOR</a>
+            <a href="/lapor" className='text-center'  >LAPOR</a>
             <a href="/about" className='text-center'>TENTANG KAMI</a>
           </div>
           <p className="opacity-50 text-sm text-center">
